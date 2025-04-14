@@ -1,3 +1,20 @@
-import { type RouteConfig, index } from "@react-router/dev/routes";
+import Home from "./routes/home";
+import App1 from "./routes/app1";
+import App2 from "./routes/app2";
 
-export default [index("routes/home.tsx")] satisfies RouteConfig;
+const routes = [
+  {
+    path: "/",
+    Component: Home,
+  },
+  {
+    path: "/app1",
+    Component: App1,
+  },
+  {
+    path: "/app2",
+    Component: App2,
+  },
+];
+
+export default routes;

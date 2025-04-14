@@ -1,13 +1,18 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
+import { Link } from "@remix-run/react";
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>🎓 Webprogramozás 1 – React SPA beadandó</h1>
+      <p>Válassz az alábbi alkalmazások közül:</p>
+      <ul>
+        <li>
+          <Link to="/app1">📝 To-do lista alkalmazás</Link>
+        </li>
+        <li>
+          <Link to="/app2">❓ Mini kvíz alkalmazás</Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
