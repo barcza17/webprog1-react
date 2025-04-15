@@ -11,6 +11,12 @@ export default function App1() {
     }
   };
 
+  const deleteTask = (index: number) => {
+    const updatedTodos = todos.filter((_, i) => i !== index);
+    setTodos(updatedTodos);
+  };
+  
+
   return (
     <div style={{ padding: "20px" }}>
       <h2>📝 To-do lista</h2>
@@ -24,11 +30,21 @@ export default function App1() {
         Hozzáad
       </button>
       <ul>
-        {todos.map((t, i) => (
-          <li key={i}>{t}</li>
+      {todos.map((t, i) => (
+          <li key={i} style={{ marginBottom: "5px" }}>
+            {t}
+            <button
+              onClick={() => deleteTask(i)}
+              style={{ marginLeft: "10px", color: "red" }}
+            >
+              ❌
+            </button>
+          </li>
         ))}
       </ul>
     </div>
   );
 }
 
+
+// 3. részállapot teszt
