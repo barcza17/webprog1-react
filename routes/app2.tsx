@@ -46,6 +46,50 @@ export default function App2() {
     setSelectedIndex(null);
     setCurrentQuestion(currentQuestion + 1);
   };
-
+  return (
+    <div style={{ padding: "20px" }}>
+      <h2>🧠 Webprogramozás mini kvíz</h2>
+      {currentQuestion < questions.length ? (
+        <div>
+          <p><strong>Kérdés {currentQuestion + 1}:</strong> {question.question}</p>
+          <ul style={{ listStyle: "none", padding: 0 }}>
+            {question.options.map((option, index) => (
+              <li key={index} style={{ marginBottom: "8px" }}>
+                <button
+                  onClick={() => handleAnswer(index)}
+                  disabled={answered}
+                  style={{
+                    backgroundColor:
+                      answered && index === question.correctIndex
+                        ? "lightgreen"
+                        : answered && index === selectedIndex
+                        ? "salmon"
+                        : "white",
+                    border: "1px solid #ccc",
+                    padding: "8px 12px",
+                    cursor: "pointer",
+                    width: "100%",
+                    textAlign: "left",
+                  }}
+                >
+                  {option}
+                </button>
+              </li>
+            ))}
+          </ul>
+          {answered && (
+            <button onClick={nextQuestion} style={{ marginTop: "12px" }}>
+              Következő kérdés →
+            </button>
+          )}
+        </div>
+      ) : (
+        <div>
+          <h3>🎉 Végeredmény</h3>
+          <p>Helyes válaszok száma: {score} / {questions.length}</p>
+        </div>
+      )}
+    </div>
+  );
 }
-// 4. reszallapot teszt
+// 5. reszallapot teszt
