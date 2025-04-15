@@ -60,3 +60,5 @@ export default function App2() {
     </div>
   );
 }
+
+// 2. reszallapot teszt
