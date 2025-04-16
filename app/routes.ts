@@ -1,19 +1,19 @@
-
-
 const routes = [
   {
     path: "/",
-    file: "./home.tsx",
+    file: "./routes/home.tsx",
   },
   {
     path: "/app1",
-    file: "./app1.tsx",
+    file: "./routes/app1.tsx",
   },
   {
     path: "/app2",
-    file: "./app2.tsx",
+    file: "./routes/app2.tsx",
   },
 ];
 
 export default routes;
+
+
 
