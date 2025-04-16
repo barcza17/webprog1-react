@@ -1,9 +1,9 @@
-import { Link } from "@remix-run/react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <div style={{ padding: "20px" }}>
-      <h1>🎓 Webprogramozás 1 – React SPA beadandó</h1>
+      <h1>🎓 Webprogramozás 1 – React feladat</h1>
       <p>Válassz az alábbi alkalmazások közül:</p>
       <ul>
         <li>
